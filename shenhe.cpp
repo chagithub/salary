@@ -188,19 +188,66 @@ Others: 无// 其它说明
 void modify()//修改
 {
 	char job_number[100];
-	printf("输入要修改的职工工号\n");
 	printf("修改完成后需保存才有效\n");
+	printf("输入要修改的职工工号\n");
 	scanf("%s",job_number);//输入工号
 	for(int i=0;i<n;i++)
 	{
 		if(strcmp(job_number,zggz[i].job_number)==0)//查询是否有匹配的工号//进行修改
 		{
-		        printf("重新输入姓名，岗位工资，薪级工资，职务津贴，绩效工资\n");
-		        scanf("%s",zggz[i].name);
-		        scanf("%f",&zggz[i].post_salary);
-		        scanf("%f",&zggz[i].salary_scale);
-		        scanf("%f",&zggz[i].job_allowance);
-		        scanf("%f",&zggz[i].performance_pay);
+		        printf("工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
+		        printf("%s ,%s ,%g ,%g ,%g ,%g ,"
+				      ,zggz[i].job_number,zggz[i].name,zggz[i].post_salary
+				      ,zggz[i].salary_scale,zggz[i].job_allowance,zggz[i].performance_pay);
+		        grsds(i);//调用grsds()函数求应发工资，个人所得税和实发工资并输出
+				printf("\n");//换行
+		        printf("输入对应数字选项进行修改 1.姓名，2.岗位工资，3.薪级工资，4.职务津贴，5.绩效工资\n");
+		        printf("也可输入6进行全部修改\n");
+		        int p;
+		        scanf("%d",&p);
+		        switch(p)//相关选项的执行函数
+		        {
+		            case 1: 
+						{
+                                printf("重新输入姓名\n");
+                                scanf("%s",zggz[i].name);
+                                break;
+						}
+		            case 2: 
+						{
+                                printf("重新输入岗位工资\n");
+                                scanf("%f",&zggz[i].post_salary);
+                                break;
+						}		        
+		            case 3: 
+						{
+                                printf("重新输入薪级工资\n");
+                                scanf("%f",&zggz[i].salary_scale);
+                                break;
+						}
+		            case 4: 
+						{
+                                printf("重新输入职务津贴\n");
+                                scanf("%f",&zggz[i].job_allowance);
+                                break;
+						}
+		            case 5: 
+						{
+                                printf("重新输入绩效工资\n");
+                                scanf("%f",&zggz[i].performance_pay);
+                                break;
+						}
+		            case 6: 
+						{
+                                printf("重新输入  姓名，岗位工资，薪级工资，职务津贴，绩效工资\n");
+                                scanf("%s",zggz[i].name);
+                                scanf("%f",&zggz[i].post_salary);
+                                scanf("%f",&zggz[i].salary_scale);
+                                scanf("%f",&zggz[i].job_allowance);
+                                scanf("%f",&zggz[i].performance_pay);
+                                break;
+						}
+		        }
 		        printf("修改后的职工信息：\n");
 		        printf("工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
 		        printf("%s ,%s ,%g ,%g ,%g ,%g ,"
@@ -230,8 +277,8 @@ Others: 无// 其它说明
 *************************************************/
 void add()//添加
 {
-	printf("输入想要写入的员工数\n");
 	printf("添加完成后需保存才有效\n");
+	printf("输入想要写入的员工数\n");
 	int num;
 	scanf("%d",&num);//输入要增加的人数
 	for(int i=n;i<num+n;i++)//通过for循环依次输入新增职工信息
@@ -261,8 +308,8 @@ Others: 无// 其它说明
 void del()//删除指定员工的信息
 {
 	char job_number[100];
-	printf("输入想要删除的员工工号\n");
 	printf("删除完成后需保存才有效\n");
+	printf("输入想要删除的员工工号\n");
 	scanf("%s",job_number);//输入工号
 	for(int i=0;i<n;i++)
 	{
