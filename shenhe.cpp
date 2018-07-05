@@ -103,7 +103,7 @@ void grsds(int i)//求职工应发工资，个人所得税，实发工资
 		}
 
 		zggz[i].salary_paid=zggz[i].payable_wages-zggz[i].personal_income_tax;//计算实得工资
-		printf("%g ,%g ,%g",zggz[i].payable_wages,zggz[i].personal_income_tax,zggz[i].salary_paid);
+		printf("%g   %g   %g",zggz[i].payable_wages,zggz[i].personal_income_tax,zggz[i].salary_paid);
 		//输出计算的三个数据
 }
 /*************************************************
@@ -158,7 +158,7 @@ void find()//查询
 		{
 		        printf("所查询的职工信息：\n");
 		        printf("工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
-		        printf("%s ,%s ,%g ,%g ,%g ,%g ,"
+		        printf("%s     %s   %g    %g    %g    %g   "
 				,zggz[i].job_number,zggz[i].name,zggz[i].post_salary
 				,zggz[i].salary_scale,zggz[i].job_allowance,zggz[i].performance_pay);
                         grsds(i);//调用grsds()函数求应发工资，个人所得税和实发工资并输出
@@ -196,7 +196,7 @@ void modify()//修改
 		if(strcmp(job_number,zggz[i].job_number)==0)//查询是否有匹配的工号//进行修改
 		{
 		        printf("工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
-		        printf("%s ,%s ,%g ,%g ,%g ,%g ,"
+		        printf("%s     %s   %g    %g    %g    %g   "
 				      ,zggz[i].job_number,zggz[i].name,zggz[i].post_salary
 				      ,zggz[i].salary_scale,zggz[i].job_allowance,zggz[i].performance_pay);
 		        grsds(i);//调用grsds()函数求应发工资，个人所得税和实发工资并输出
@@ -250,9 +250,9 @@ void modify()//修改
 		        }
 		        printf("修改后的职工信息：\n");
 		        printf("工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
-		        printf("%s ,%s ,%g ,%g ,%g ,%g ,"
-				,zggz[i].job_number,zggz[i].name,zggz[i].post_salary
-				,zggz[i].salary_scale,zggz[i].job_allowance,zggz[i].performance_pay);
+		        printf("%s     %s   %g    %g    %g    %g   "
+			        ,zggz[i].job_number,zggz[i].name,zggz[i].post_salary
+			        ,zggz[i].salary_scale,zggz[i].job_allowance,zggz[i].performance_pay);
 		        grsds(i);//调用grsds()函数求应发工资，个人所得税和实发工资并输出
 		        break;
 		}
@@ -380,7 +380,7 @@ void list()//列表
         printf("工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
         for(i=0;i<n;i++)//通过for循环依次输出所有职工信息
 	{
-		printf("%s ,%s ,%g ,%g ,%g ,%g ,"
+		printf("%s     %s   %g    %g    %g    %g   "
 			,zggz[i].job_number,zggz[i].name,zggz[i].post_salary
 			,zggz[i].salary_scale,zggz[i].job_allowance,zggz[i].performance_pay);
 		grsds(i);
