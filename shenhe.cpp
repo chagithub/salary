@@ -14,6 +14,9 @@ History: // 修改历史记录列表，每条修改记录应包括修改日期、修改者及修改内容简述
 1. Date:2018.6.29
 Author:侯泽宇
 Modification:进行初次排版
+2. Date:2018.7.5
+Author:侯泽宇
+Modification:进行最终排版
 *************************************************/
 #include<stdio.h>
 #include<iostream>
