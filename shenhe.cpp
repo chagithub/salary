@@ -186,6 +186,7 @@ void modify()//修改
 {
 	char job_number[100];
 	printf("输入要修改的职工工号\n");
+	printf("修改完成后需保存才有效\n");
 	scanf("%s",job_number);//输入工号
 	for(int i=0;i<n;i++)
 	{
@@ -227,6 +228,7 @@ Others: 无// 其它说明
 void add()//添加
 {
 	printf("输入想要写入的员工数\n");
+	printf("添加完成后需保存才有效\n");
 	int num;
 	scanf("%d",&num);//输入要增加的人数
 	for(int i=n;i<num+n;i++)//通过for循环依次输入新增职工信息
@@ -257,6 +259,7 @@ void del()//删除指定员工的信息
 {
 	char job_number[100];
 	printf("输入想要删除的员工工号\n");
+	printf("删除完成后需保存才有效\n");
 	scanf("%s",job_number);//输入工号
 	for(int i=0;i<n;i++)
 	{
