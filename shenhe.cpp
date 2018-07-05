@@ -119,7 +119,7 @@ Others: 无// 其它说明
 int read()//读取职工数据
 {
         FILE *fp;
-        fp=fopen("gx.dat","rb");//打开文件
+        fp=fopen("gx.dat","a+");//打开文件
         fseek(fp,0,SEEK_SET);//移动指针
         fseek(fp,0,SEEK_END);//同上
         int number=ftell(fp)/sizeof(struct zggz);//总字节长度除以结构体单位长度即为人数
